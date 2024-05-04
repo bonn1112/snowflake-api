@@ -2,7 +2,8 @@ import express from 'express';
 import snowflake from 'snowflake-sdk';
 
 const app = express();
-const port = 3000;  // ポート番号は必要に応じて変更
+const port = process.env.PORT || 3000;  // Azureで動作させる場合、環境変数からポートを取得
+  // ポート番号は必要に応じて変更
 
 // Snowflake 接続の設定
 const connection = snowflake.createConnection({
